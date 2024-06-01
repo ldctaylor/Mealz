@@ -2,9 +2,13 @@ import React from "react";
 import { useState } from "react";
 
 function Form() {
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault(); // prevents the nativs JS form behaviour which refreshes whole page
-    console.log({ recipe });
+    const response = await fetch(
+      `https://www.themealdb.com/api/json/v1/1/search.php?s=${recipe}`
+    );
+    const data = await response.json();
+    console.log(data);
   };
   const [recipe, setRecipe] = useState("");
   return (
@@ -15,7 +19,7 @@ function Form() {
         value={recipe}
         onChange={(e) => setRecipe(e.target.value)}
       />
-      <button>Add recipe</button>
+      <button>Find recipe</button>
     </form>
   );
 }
