@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import RecipeList from "./RecipeList";
+import Form from "./Form";
+import { recipes } from "./testdata/response-mocks.js";
 
-function App() {
+function App({ title }) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <h1>{title}</h1>
       </header>
+      <main>
+        <Form />
+        <div className="row">
+          <RecipeList recipes={recipes} />
+        </div>
+      </main>
     </div>
   );
 }
