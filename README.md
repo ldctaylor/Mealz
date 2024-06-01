@@ -1,6 +1,8 @@
-Recipe
-List of Recipes
-Ingredients
+# Overview
+
+A little app I made while learning the basics of React. The app starts with a small set of recipes. The user can search for a recipe from the free 'mealDB' API and it is then added to the list of recipes displayed.
+
+The app is bare bones and does not store the new recipes. When the page is refreshed, they will disappear.
 
 # Getting Started with Create React App
 
