@@ -1,9 +1,20 @@
 import React from "react";
+import { useState } from "react";
 
 function Form() {
+  const handleSubmit = (e) => {
+    e.preventDefault(); // prevents the nativs JS form behaviour which refreshes whole page
+    console.log({ recipe });
+  };
+  const [recipe, setRecipe] = useState("");
   return (
-    <form action="">
-      <input type="text" placeholder="recipe name" />
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="Recipe name"
+        value={recipe}
+        onChange={(e) => setRecipe(e.target.value)}
+      />
       <button>Add recipe</button>
     </form>
   );
