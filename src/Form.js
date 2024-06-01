@@ -5,7 +5,6 @@ import Error from "./Error";
 function Form({ recipeArray, setRecipeArray, newRecipe, setNewRecipe }) {
   const [error, setError] = useState("false");
   const addNewRecipe = (newRecipe) => {
-    // console.log(recipeArray);
     setRecipeArray([...recipeArray, newRecipe]);
   };
 

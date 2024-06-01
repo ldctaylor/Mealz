@@ -10,10 +10,6 @@ function App({ title }) {
   const [recipeArray, setRecipeArray] = useState(importedRecipes);
   const [newRecipe, setNewRecipe] = useState(" ");
 
-  // const addNewRecipe = (newRecipe) => {
-  //   console.log("App", newRecipe);
-  //   recipes = [...recipes, newRecipe];
-  // };
   return (
     <div className="App">
       <header>
