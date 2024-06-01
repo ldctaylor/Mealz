@@ -20,7 +20,7 @@ function Recipe(recipe) {
           <div className="recipe">
             <div className="card-text recipe-intro">
               {recipe.strInstructions
-                ? recipe.strInstructions.split(" ").slice(0, 60).join(" ")
+                ? recipe.strInstructions.split(" ").slice(0, 30).join(" ")
                 : " "}
               ...
             </div>

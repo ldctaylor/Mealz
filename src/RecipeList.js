@@ -1,12 +1,11 @@
 import React from "react";
 import Recipe from "./Recipe";
 
-function RecipeList({ recipes }) {
+function RecipeList({ recipeArray }) {
   return (
     <>
-      {console.log(recipes)};
-      {recipes.map((recipe) => (
-        <Recipe {...recipe} />
+      {recipeArray.map((recipe, index) => (
+        <Recipe key={index} {...recipe} />
       ))}
     </>
   );

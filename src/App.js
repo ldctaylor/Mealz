@@ -2,8 +2,14 @@ import "./App.css";
 import RecipeList from "./RecipeList";
 import Form from "./Form";
 import { recipes } from "./testdata/response-mocks.js";
+import { useState } from "react";
 
 function App({ title }) {
+  const importedRecipes = recipes;
+
+  const [recipeArray, setRecipeArray] = useState(importedRecipes);
+  const [newRecipe, setNewRecipe] = useState(" ");
+
   // const addNewRecipe = (newRecipe) => {
   //   console.log("App", newRecipe);
   //   recipes = [...recipes, newRecipe];
@@ -14,9 +20,14 @@ function App({ title }) {
         <h1>{title}</h1>
       </header>
       <main>
-        <Form recipes={recipes} />
+        <Form
+          recipeArray={recipeArray}
+          setRecipeArray={setRecipeArray}
+          newRecipe={newRecipe}
+          setNewRecipe={setNewRecipe}
+        />
         <div className="row">
-          <RecipeList recipes={recipes} />
+          <RecipeList recipeArray={recipeArray} />
         </div>
       </main>
     </div>
